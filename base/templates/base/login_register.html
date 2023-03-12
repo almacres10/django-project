@@ -5,6 +5,7 @@
     <main class="auth layout">
 
       {% if page == 'login' %}
+      {% csrf_token %}
       <div class="container">
         <div class="layout__box">
           <div class="layout__boxHeader">
@@ -16,9 +17,10 @@
             <h2 class="auth__tagline">Find your study partner</h2>
 
             <form class="form" action="" method="POST">
+              {% csrf_token %}
               <div class="form__group form__group">
                 <label for="room_name">Username</label>
-                <input id="username" name="username" type="text" placeholder="e.g. dennis_ivy" />
+                <input id="username" name="username" type="text" placeholder="" />
               </div>
               <div class="form__group">
                 <label for="password">Password</label>
